@@ -1,6 +1,4 @@
-# Atlas Library
-
-## Video Demo: https://youtu.be/y2vtJ5kQcb8
+# Atlas Library (Made in 2024)
 
 ## Table of Contents
 1. [Description](#description)
