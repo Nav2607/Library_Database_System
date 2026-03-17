@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Holds
+{% endblock %}
+
+{% block main %}
+    <h1>Your Held Books</h1>
+    <!--Table-->
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Unhold</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if holds %}
+                {% for hold in holds %}
+                    <tr>
+                        <td>{{ hold['Title'] }}</td>
+                        <td>{{ hold['Author'] }}</td>
+                        <td>
+                            <!--Unhold Button-->
+                            <form action="/unhold" method="POST">
+                                <input type="hidden" name="title" value="{{ hold['Title'] }}">
+                                <button class="btn btn-danger btn-sm" type="submit">Unhold</button>
+                            </form>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">No held books found.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}

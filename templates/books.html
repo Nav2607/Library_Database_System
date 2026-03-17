@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Books
+{% endblock %}
+
+{% block main %}
+    <!-- Search Bar -->
+    <form action="/" method="post" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Search for books...">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+        </div>
+    </form>
+
+    <!-- Display Books -->
+    <div class="row">
+        {% for book in books %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ book.Image}}" alt="{{ book.Title }}" class="card-img-top book-image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.Title }}</h5>
+                    <p class="card-text">
+                        Author: {{ book.Author }}<br>
+                        Rating: {{ book.Rating }}
+                    </p>
+                    <form action="/hold" method="post" style="display: inline;">
+                        <input type="hidden" name="title" value="{{ book.Title }}">
+                        <input type="hidden" name="author" value="{{ book.Author }}">
+                        <button type="submit" class="btn btn-success">Hold</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

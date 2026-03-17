@@ -1,0 +1,38 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+
+nav .navbar-brand .orange
+{
+    color: #FFA500;
+}
+/* Adjust the card size */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Center the search bar vertically */
+form {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Ensure all book images have the same size without being cut off */
+.book-image {
+    padding-top:20px;
+    width: 90%;
+    height: 350px;
+    object-fit: contain;
+    margin: 0 auto;
+
+}
+

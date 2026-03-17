@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contact Us
+{% endblock %}
+
+{% block main %}
+    <!--Contact Information-->
+    <h1>Contact Us</h1>
+    <div class="contact-section">
+        <p><strong>Phone:</strong> 123-456-7890</p>
+        <p><strong>Email:</strong> atlaslibrary@gmail.com</p>
+    </div>
+
+    <hr>
+
+    <!--Review Form-->
+    <h2>Leave a Review</h2>
+    <form method="POST" class="reviews-form">
+        <div class="mb-3">
+            <textarea name="review" class="form-control" placeholder="Write your review here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit Review</button>
+    </form>
+
+    <!--Message-->
+    {% if message %}
+        <p class="alert alert-success mt-3">{{ message }}</p>
+    {% endif %}
+
+    <hr>
+    <p> For CS50 2024</p>
+{% endblock %}
